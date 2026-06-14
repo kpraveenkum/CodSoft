@@ -116,7 +116,7 @@ class HumanPlayer:
                 else:
                     good_move = True
             except ValueError:
-                print("Please enter a valid number (0-8)!")
+                print("Please enter a valid number (0 to 8)!")
         return move
 class GameController:
     def __init__(self):
@@ -159,22 +159,22 @@ class GameController:
             self.game.print_board()
             if self.game.win:
                 if isinstance(self.turn, HumanPlayer):
-                    print(f" CONGRATULATIONS! You won in {moves_made} moves!")
+                    print(f" well done u won! You won in {moves_made} moves!")
                 else:
-                    print(f" AI wins! Better luck next time! ")
+                    print(f" I wins! Better luck next time! ")
                 game_done = True
                 break
             if not self.game.empty_squares():
-                print(" IT'S A TIE! Well played!")
+                print(" drow! Well played!")
                 game_done = True
                 break
             self.turn = self.ai if self.turn == self.human else self.human
         elapsed = time.time() - start
-        print("GAME STATISTICS")
+        print("gamee States")
         print(f"Total moves: {moves_made}")
         print(f"Game duration: {elapsed:.2f} seconds")
-        print(f"AI Algorithm: Minimax with Alpha-Beta Pruning")
-        print(f"AI Difficulty: Unbeatable")
+        print(f"aI algorithm: Minimax with Alpha-Beta Pruning")
+        print(f"qI difficulty: Unbeatable")
         self.play_again()
     def play_again(self):
         while True:
@@ -184,10 +184,10 @@ class GameController:
                 self.play_game()
                 break
             elif choice in ['no', 'n']:
-                print("Thanks for playing! Goodbye!")
+                print("thanks for playing! Goodbye!")
                 break
             else:
-                print("Please enter 'yes' or 'no'")
+                print("olease enter 'yes' or 'no'")
 class SimpleAIPlayer:
     def __init__(self, letter: str):
         self.letter = letter
@@ -232,11 +232,11 @@ class SimpleAIPlayer:
 if __name__ == "__main__":
     print("TIC-TAC-TOE AI - UNBEATABLE CHALLENGE ")
     print("\nChoose AI version:")
-    print("1. Optimized AI (Minimax with Alpha-Beta Pruning - Faster)")
-    print("2. Simple AI (Basic Minimax - Slower but same strategy)")
+    print("1. optimized AI (Minimax with Alpha-Beta Pruning - Faster)")
+    print("2. simple AI (Basic Minimax - Slower but same strategy)")
     choice = input("\nEnter choice (1 or 2): ").strip()
     if choice == "2":
-        print("\nStarting game with Basic Minimax AI...")
+        print("\nstarting game with basic minimax AI...")
         class SimpleGameController(GameController):
             def play_game(self):
                 human_letter = self.pick_letter()
@@ -245,10 +245,10 @@ if __name__ == "__main__":
                 self.ai = SimpleAIPlayer(ai_letter)
                 if human_letter == 'X':
                     self.turn = self.human
-                    print("\nYou go first! (X)")
+                    print("\nYou  first! (X)")
                 else:
                     self.turn = self.ai
-                    print("\nAI goes first! (O)")
+                    print("\nai goes first! (O)")
                 self.game.print_board_positions()
                 game_done = False
                 moves_made = 0
@@ -260,12 +260,12 @@ if __name__ == "__main__":
                     self.game.print_board()
                     if self.game.win:
                         if isinstance(self.turn, HumanPlayer):
-                            print("CONGRATULATIONS! You won! ")
+                            print("well donee! You won! ")
                         else:
-                            print(" AI wins! Better luck next time! ")
+                            print(" I won! Better luck next time! ")
                         break
                     if not self.game.empty_squares():
-                        print("IT'S A TIE!")
+                        print("it's Drow !")
                         break
                     self.turn = self.ai if self.turn == self.human else self.human
                 self.play_again()
