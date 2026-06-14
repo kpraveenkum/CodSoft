@@ -5,8 +5,8 @@ class AdvancedChatbot:
     def __init__(self):
         self.simple_responses = {
             "hi": "hi sir, What help do you need?",
-            "hello": "hello sir, What help do you need",
-            "bye": "Thank you sir",
+            "hello": "hell sir, What help do you need",
+            "bye": "Thax you sir",
             "goodbye": "goodbye, have a nice day ",
             "ok": "OK, ask me anything that you want to ask"
         }
@@ -29,11 +29,11 @@ class AdvancedChatbot:
             },
             "farewell": {
                 "patterns": [r"\b(exit|bye|see you later|goodbye)\b"],
-                "responses": ["good bye", "have a good day", "bye", "see you later", "take care"]
+                "responses": ["god bye", "have a good day", "bye", "see you later", "take care"]
             },
             "thanks": {
                 "patterns": [r"\b(thank you|thanks|thanx)\b"],
-                "responses": ["you're welcome", "my pleasure", "happy to help"]
+                "responses": ["youare welcome", "my pleasure", "happy to help"]
             },
             "identify": {
                 "patterns": [r"who are you", r"what are you", r"what is your name"],
@@ -153,7 +153,7 @@ class AdvancedChatbot:
         print("$ Regex pattern matching with function")
         print("$ Intent-based system with random responses")
         print("$ Name memory and conversation context")
-        print("\nType 'quit' or 'exit' to end the conversation")
+        print("\nType 'quit' or 'exits' to end the conversation")
         print("-" * 50 + "\n")
         while True:
             user = input("You: ").strip()
@@ -196,12 +196,12 @@ def simple_combined_chatbot():
         if user_name and random.random() < 0.5:
             return f"Sorry {user_name}, I can't understand. Please repeat it again once more"
         return "I can't understand what you mean. Try asking differently please"
-    print("\n===== Sample Chatbot with Sample Data =====")
-    print("Type 'quit' or 'exit' to end the conversation\n")
+    print("\nSample Chatbot with Sample Data ")
+    print("Type 'quit' or 'exit' to end the convertion\n")
     while True:
         user = input("You: ")
         if user.lower() in ["quit", "exit"]:
-            print("Bot: Goodbye!")
+            print("Bot: goodbye!")
             break
         print(f"Bot: {get_response(user)}")
 
@@ -225,9 +225,9 @@ def healthcare_chatbot():
                 temp = float(input("Bot: What is your body temperature in Cels? "))
                 if temp > 37.5:
                     print(
-                        "Bot: You may have a fever. Please rest and stay hydrated. visit a doctor if temperature persists.")
+                        "Bot: You may have a fever. Please rest and stay hydrated. visit a doctor if temperature rising  .")
                 elif temp < 35.0:
-                    print("Bot: Your temperature seems low. Please keep warm and monitor your condition.")
+                    print("Bot: Your temperature seems less . Please keep warm and monitor your health ok na.")
                 else:
                     print("Bot: Your temperature appears normal. That's good!")
             except ValueError:
