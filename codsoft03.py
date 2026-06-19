@@ -150,21 +150,19 @@ def start():
     global cur, df
     while True:
         menu1()
-        try:
-            ch = int(input("\nenter your choice (1-3): "))
-            if ch == 3:
-                print("\nthank you for using the Recommendation System!")
-                print("happy exploring! Goodbye!")
-                break
-            if 1 <= ch <= 2:
-                cur = cats[ch - 1]
-                print(f"\nyou selected: {cur.upper()}")
-                df = load(cur)
-                print(f"\nloaded {len(df)} {cur} in our database")
-                menu2()
-            else:
-                print("Invalid choice. Please select 1, 2, or 3")
-        except ValueError:
-            print("Please enter a valid number")
+        ch = int(input("\nenter your choice (1-3): "))
+        if ch == 3:
+            print("\nthank you for using the Recommendation System!")
+            print("happy exploring! Goodbye!")
+            break
+        elif 1 <= ch <= 2:
+            cur = cats[ch - 1]
+            print(f"\nyou selected: {cur.upper()}")
+            df = load(cur)
+            print(f"\nloaded {len(df)} {cur} in our database")
+            menu2()
+        else:
+            print("Invalid choice. Please select 1, 2, or 3")
+
 if __name__ == "__main__":
     start()
